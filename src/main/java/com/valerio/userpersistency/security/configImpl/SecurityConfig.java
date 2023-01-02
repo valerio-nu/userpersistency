@@ -39,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         // two variants of AuthorizedUrl configuration was done here
         http.authorizeRequests()
-                .antMatchers("/persistence/homepage/adminconsole/**").access("hasRole('ADMIN')");
+                .antMatchers("/persistence/homepage/Dashboard/**").access("hasRole('ADMIN')");
         http.authorizeRequests()
                 .antMatchers("/persistence/homepage/user/**", "/persistence/redirect").hasRole("USER");  // "ROLE_" adds automatically
 
@@ -60,7 +60,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         //logout configuration was done here
         http.logout()
-                .logoutUrl("/appLogout")
+                .logoutUrl("/Logout")
                 .logoutSuccessUrl("/persistence");
 
         http.sessionManagement().maximumSessions(1);
